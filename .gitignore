@@ -6,3 +6,11 @@
 
    # 忽略 Visual Studio 的 .vs 文件夹
    .vs/
+
+   *.user
+
+   obj/
+
+   bin/
+
+   .cache
