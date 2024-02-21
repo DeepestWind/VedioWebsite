@@ -1,26 +1,22 @@
+import { CommonModule } from '@angular/common';
 import { Component,OnInit} from '@angular/core';
-import { HttpSharedModule } from '../http-client.shared';
-import { VideoService} from '../testhttp/test.service'
+import { HttpClient,HttpClientModule } from '@angular/common/http';
+import { VideoService} from '../testhttp/test.service';
+import { Video } from '../models/video.model';
 @Component({
   selector: 'app-testhttp',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,HttpClientModule],
+  providers: [VideoService,HttpClient],
   templateUrl: './testhttp.component.html',
   styleUrl: './testhttp.component.css'
 })
-export class TesthttpComponent implements OnInit{
-  videos: any[] = [];
+export class TesthttpComponent{
+  videos: Video[] = [];
 
-  constructor(private videoService: VideoService) { }
+  constructor(private readonly videoService: VideoService) { }
 
   ngOnInit(): void {
-    this.videoService.getVideos().subscribe(
-      data => {
-        this.videos = data;
-      },
-      error => {
-        console.error('Error fetching data: ', error);
-      }
-    );
+    this.videoService.getVideos().subscribe(videos => this.videos = videos);
   }
 }
