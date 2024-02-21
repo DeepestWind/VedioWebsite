@@ -1,10 +1,7 @@
-   # 忽略所有 .log 文件
    *.log
 
-   # 忽略临时文件夹
    temp/
 
-   # 忽略 Visual Studio 的 .vs 文件夹
    .vs/
 
    *.user
@@ -14,3 +11,44 @@
    bin/
 
    .cache
+
+   # Compiled output (from angular)
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db

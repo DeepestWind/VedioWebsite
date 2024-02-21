@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --background-light: #eebed2; /* 亮色模式下的背景色 */
+    --background-dark: #222222; /* 暗色模式下的背景色 */
+    --text-light: #121212; /* 亮色模式下的文字颜色 */
+    --text-dark: #ffffff; /* 暗色模式下的文字颜色 */
+    --border-light: #dddddd; /* 亮色模式下的边框颜色 */
+    --border-dark: #333333; /* 暗色模式下的边框颜色 */
+    --input-background-light: #f0f0f0; /* 亮色模式下输入框的背景色 */
+    --input-background-dark: #2a2a2a; /* 暗色模式下输入框的背景色 */
+    /* ... */
+  }
+
+
+
+/* 设置body的背景和文本颜色 */
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 设置通用字体 */
+  }
+  /* 调整输入框和按钮的风格 */
+  input, button, textarea, select {
+    background-color: var(--input-background-light); /* 输入框和按钮等使用更深的暗背景色 */
+    color: var(--text-light); /* 文本为亮色 */
+    border: 1px solid var(--border-light); /* 边框为中等灰色 */
+    border-radius: 4px; /* 轻微的圆角边框 */
+    padding: 10px; /* 内部间距 */
+  }
+  
+  /* 在输入框获得焦点时提供视觉反馈 */
+  input:focus, textarea:focus {
+    border-color: #bb86fc; /* 紫色边框 */
+    box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2); /* 添加发光的阴影 */
+  }
+  
+/* 暗色模式的样式 */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 设置通用字体 */
+  }
+  
+  body.dark-mode input,
+  body.dark-mode button,
+  body.dark-mode textarea,
+  body.dark-mode select {
+    background-color: var(--input-background-dark);
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 4px; /* 轻微的圆角边框 */
+    padding: 10px; /* 内部间距 */
+  }
