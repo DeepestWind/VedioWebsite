@@ -1,0 +1,25 @@
+/* theme-switcher.component.css */
+.theme-switcher {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 5px 10px;
+  border: 1px solid #d3d3d3; /* 淡灰色边框 */
+  transition: border-color 0.3s; /* 平滑过渡动画效果 */
+}
+
+.theme-switcher:hover {
+  border-color: #a9a9a9; /* 鼠标悬停时，边框颜色变为稍微深一点的灰色 */
+}
+
+.theme-switcher img {
+  transition: transform 0.3s ease;
+  width: 24px; /* or the size you prefer */
+  height: 24px; /* or the size you prefer */
+}
+
+body.dark-mode .theme-switcher img {
+  transform: rotate(180deg); /* Optional: rotates the icon 180 degrees when in dark mode */
+}

@@ -1,0 +1,7 @@
+<div class="video-card" (click)="navigateToVideoDetail(video)">
+    <img [src]="video.thumbnail" alt="{{ video.title }}" class="video-thumbnail">
+    <div class="video-info">
+      <h4 class="video-title">{{ video.title }}</h4>
+      <p class="video-details">{{ video.views }} views · {{ video.uploadTime }}</p>
+    </div>
+  </div>

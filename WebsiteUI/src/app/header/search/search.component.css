@@ -1,0 +1,46 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 15px; /* 圆角边框 */
+    padding: 5px 10px; /* 内部间距 */
+  }
+  
+  .search-bar input[type="text"] {
+    flex-grow: 1; /* 输入框将填满除按钮外的所有空间 */
+    border: none; /* 移除输入框的边框 */
+    padding: 10px; /* 输入框内部间距 */
+    margin-right: 8px; /* 输入框和按钮之间的间隔 */
+    border-radius: 20px; /* 圆角 */
+    outline: none; /* 移除聚焦时的轮廓 */
+  }
+  
+  .search-bar button {
+    padding: 10px 20px; /* 按钮内部间距 */
+    border: none; /* 移除按钮的边框 */
+    background-color: #0056b3; /* 按钮的背景颜色 */
+    color: white; /* 按钮的文字颜色 */
+    border-radius: 20px; /* 圆角 */
+    cursor: pointer; /* 将鼠标样式设置为点击手型 */
+    transition: background-color 0.3s ease-in-out; /* 背景颜色渐变效果 */
+  }
+  
+  .search-bar button:hover {
+    background-color: #b80fda; /* 鼠标悬浮时的按钮背景颜色 */
+  }
+  
+  /* 为了响应式设计，你可以使用媒体查询来对不同屏幕尺寸进行样式调整 */
+  @media (max-width: 768px) {
+    .search-bar {
+      flex-direction: column;
+      border-radius: 10px;
+    }
+  
+    .search-bar input[type="text"] {
+      margin-right: 0;
+      margin-bottom: 8px; /* 在移动设备上，将按钮移至输入框下方 */
+    }
+  
+    .search-bar button {
+      width: 100%; /* 使按钮在移动设备上宽度100% */
+    }
+  }
