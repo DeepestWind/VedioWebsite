@@ -1,0 +1,8 @@
+   # 忽略所有 .log 文件
+   *.log
+
+   # 忽略临时文件夹
+   temp/
+
+   # 忽略 Visual Studio 的 .vs 文件夹
+   .vs/
