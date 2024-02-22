@@ -1,7 +1,6 @@
-<div class="video-card" (click)="navigateToVideoDetail(video)">
-    <img [src]="video.thumbnail" alt="{{ video.title }}" class="video-thumbnail">
-    <div class="video-info">
-      <h4 class="video-title">{{ video.title }}</h4>
-      <p class="video-details">{{ video.views }} views · {{ video.uploadTime }}</p>
-    </div>
-  </div>
+<div class="video-card">
+  <img [src]="video.thumbnailsPath" alt="Thumbnail">
+  <h2>{{ video.title }}</h2>
+  <p>{{ video.description }}</p>
+  <!-- 根据需要添加更多的视频详情 -->
+</div>
