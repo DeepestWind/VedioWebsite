@@ -1,13 +1,23 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HeaderModule } from '../header/header.module';
-import { TesthttpComponent } from '../testhttp/testhttp.component';
+import { HttpClientModule } from '@angular/common/http'; 
+import { VideoService} from '../services/video.service';
+import { Video } from '../models/video.model';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderModule,TesthttpComponent],
+  imports: [CommonModule,HttpClientModule,HeaderModule],
+  providers: [VideoService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  videos: Video[] = [];
 
+  constructor(private readonly videoService: VideoService) { }
+
+  ngOnInit(): void {
+    this.videoService.getVideos().subscribe(videos => this.videos = videos);
+  }
 }
