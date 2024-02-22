@@ -8,7 +8,7 @@
 
    VideoWebsiteApi/obj/
 
-   WebsiteUI/.angular/
+   WebsiteUI/.angular/cache/
 
    *.user
 
