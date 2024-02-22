@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HeaderModule } from '../header/header.module';
 import { HttpClientModule } from '@angular/common/http'; 
-import { VideoService} from '../services/video.service';
+import { VideoService } from '../services/video.service';
 import { Video } from '../models/video.model';
 @Component({
   selector: 'app-home',
