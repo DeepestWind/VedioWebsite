@@ -6,9 +6,9 @@
 #屏蔽所有文件夹下的.vs文件夹
    VideoWebsiteApi/.vs/
 
-   VideoWebsiteApi/obj/
+   **/obj/Debug/
 
-   WebsiteUI/.angular/cache/
+   **.angular/cache/
 
    *.user
 
