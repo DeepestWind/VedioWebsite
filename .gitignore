@@ -8,6 +8,8 @@
 
    VideoWebsiteApi/obj/
 
+   WebsiteUI/.angular/
+
    *.user
 
    obj/
