@@ -1,24 +1,14 @@
-   *.log
+*.log
+temp/
+/.vs/*
+/obj/Debug/*
+/.angular/cache/*
+bin/
+/cache/*
+# 屏蔽本地资源文件
+/resources/
 
-   temp/
-
-   .vs/
-#屏蔽所有文件夹下的.vs文件夹
-   VideoWebsiteApi/.vs/
-
-   **/obj/Debug/
-
-   **.angular/cache/
-
-   *.user
-
-   obj/
-
-   bin/
-
-   .cache
-
-   # Compiled output (from angular)
+# Compiled output (from angular)
 /dist
 /tmp
 /out-tsc
