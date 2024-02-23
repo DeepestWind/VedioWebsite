@@ -1,10 +1,9 @@
 *.log
 temp/
-/.vs/*
-/obj/Debug/*
-/.angular/cache/*
 bin/
-/cache/*
+VideoWebsiteApi/.vs/*
+VideoWebsiteApi/obj/*
+VideoWebsiteApiUI/.angular/*
 # 屏蔽本地资源文件
 /resources/
 
