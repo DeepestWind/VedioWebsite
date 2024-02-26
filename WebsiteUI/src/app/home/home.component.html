@@ -20,9 +20,10 @@
     
     <!-- 主内容区域 -->
     <main id="main-content">
-        <p>以下是Http连接测试</p>
-        <app-video-card *ngFor="let video of videos" [video]="video"></app-video-card>
-        
+        <p>以下是视频列表</p>
+        <div class="video-list">
+            <app-video-card *ngFor="let video of videos" [video]="video" class="video"></app-video-card>
+        </div>
     </main>
     
     <!-- 侧边栏，可选 -->
