@@ -3,7 +3,7 @@ temp/
 bin/
 VideoWebsiteApi/.vs/*
 VideoWebsiteApi/obj/*
-VideoWebsiteApiUI/.angular/*
+WebsiteUI/.angular/*
 # 屏蔽本地资源文件
 /resources/
 
