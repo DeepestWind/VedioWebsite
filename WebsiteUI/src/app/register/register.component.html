@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-center my-4">用户注册</h2>
+            <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+                <div class="form-group mb-3">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" class="form-control" [(ngModel)]="user.username" name="username" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" class="form-control" [(ngModel)]="user.password" name="password" required>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="email">电子邮件</label>
+                    <input type="email" id="email" class="form-control" [(ngModel)]="user.email" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100" [disabled]="!registerForm.valid">注册</button>
+            </form>
+        </div>
+    </div>
+</div>

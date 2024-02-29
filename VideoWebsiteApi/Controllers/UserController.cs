@@ -44,6 +44,7 @@ namespace VideoWebsiteApi.Controllers
             }
         }
 
+        //密码哈希
         // 在实际应用中，请使用更强的密码哈希方法，而不是这里演示的简单哈希
         private string HashPassword(string password)
         {
