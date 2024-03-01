@@ -2,7 +2,7 @@
 using VideoWebsiteApi.Data;
 using VideoWebsiteApi.Models;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+using VideoWebsiteApi.Interfaces;
 using System;
 using Microsoft.EntityFrameworkCore;
 namespace VideoWebsiteApi.Controllers
@@ -13,13 +13,20 @@ namespace VideoWebsiteApi.Controllers
     {
         //管理数据库连接
         private readonly ApplicationDbContext _context;
+        private readonly IHashingService _hashingService;
+        private readonly IJWTService _jwtService;
 
-        public UserController(ApplicationDbContext context) 
+        public UserController(ApplicationDbContext context, IHashingService hashingService,IJWTService jwtService) 
         {
             _context = context;
+            _hashingService = hashingService;
+            _jwtService = jwtService;
+
         }
         // POST api/user/register
         [HttpPost("register")]
+
+        //用户注册
         public async Task<ActionResult> Register([FromBody] User user)
         {
             // 检查用户名或电子邮件是否已存在
@@ -30,13 +37,14 @@ namespace VideoWebsiteApi.Controllers
             }
 
             // 哈希密码（请用实际的哈希方法替换这里的示例）
-            user.Password = HashPassword(user.Password);
+            string hashedPassword = _hashingService.HashPassword(user, user.Password);
+            user.Password = hashedPassword;
 
             try
             {
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
-                return Ok(new { user.UserId });
+                return Ok(new { UserId = user.UserId });
             }
             catch (Exception ex)
             {
@@ -44,30 +52,29 @@ namespace VideoWebsiteApi.Controllers
             }
         }
 
-        //密码哈希
-        // 在实际应用中，请使用更强的密码哈希方法，而不是这里演示的简单哈希
-        private string HashPassword(string password)
-        {
-            // 使用实际的密码哈希算法
-            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password));
-        }
-        
         // POST api/user/login
         [HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] User loginRequest)
         {
-            // 在这里，我们只是模拟登录过程。在实际应用中，您应该验证用户名和密码哈希值
-            var user = await _context.Users
-                                     .SingleOrDefaultAsync(u => u.Username == loginRequest.Username
-                                                             && u.Password == HashPassword(loginRequest.Password));
+            // 在这里，我们验证用户名和校验密码
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.Username == loginRequest.Username);
             if (user == null)
             {
-                return Unauthorized();
+                return BadRequest("User not found.");
             }
 
-            // 生成JWT Token发给客户端（此处省略了具体生成Token的代码）
-            var token = "generated-jwt-token"; // 需要实现真正的Token生成逻辑
-            return Ok(new { token = token });
+            var passwordValid = _hashingService.VerifyPassword(user, user.Password, loginRequest.Password);
+            if (!passwordValid)
+            {
+                return BadRequest("Invalid credentials.");
+            }
+
+            // 生成JWT Token发给客户端
+            var token = _jwtService.GenerateJWT(user);
+
+            return Ok(new { token });
+
         }
+     
     }
 }
