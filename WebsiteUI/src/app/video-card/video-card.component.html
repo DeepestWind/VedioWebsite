@@ -1,6 +1,8 @@
 <div class="video-card">
-  <img [src]="video.thumbnailsPath" alt="Thumbnail">
-  <h2>{{ video.title }}</h2>
-  <p>{{ video.description }}</p>
-  <!-- 根据需要添加更多的视频详情 -->
+  <a [routerLink]="['/video', video.videoId]">
+    <img [src]="video.thumbnailsPath" alt="Thumbnail">
+    <h2>{{ video.title }}</h2>
+    <p>{{ video.description }}</p>
+    <!-- 根据需要添加更多的视频详情 -->
+  </a>
 </div>

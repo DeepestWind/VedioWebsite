@@ -1,0 +1,12 @@
+<p>video-detail works!</p>
+<!-- 视频信息展示 -->
+<div class="video-details">
+    <h2>{{ video?.title }}</h2>
+    <p>{{ video?.description }}</p>
+
+    <!-- 视频播放区域 -->
+    <video controls width="100%">
+      <source [src]="video?.videoFilePath" type="video/mp4">
+      
+    </video>
+  </div>

@@ -1,9 +1,10 @@
 import { Component,Input } from '@angular/core';
 import { Video } from '../models/video.model';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-video-card',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './video-card.component.html',
   styleUrl: './video-card.component.css'
 })

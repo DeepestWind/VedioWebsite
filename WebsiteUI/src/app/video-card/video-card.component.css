@@ -28,3 +28,6 @@
     margin: 10px;
     color: #666;
   }
+  .video-card a {
+    text-decoration: none; /* 去除下划线 */
+  }
