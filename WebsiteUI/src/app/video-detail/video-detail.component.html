@@ -1,11 +1,55 @@
-<!-- 视频信息展示 -->
-<div class="video-details">
-    <h2>{{ video?.title }}</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 为移动设备添加viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+</head>
+<body>
+    <!-- 页面头部区域 -->
+    <header class="header-container">
+        <app-logo></app-logo> <!-- logo组件 -->
+        <app-search></app-search> <!-- 搜索组件 -->
+        <app-theme-switcher></app-theme-switcher> <!-- 主题切换组件 -->
+        <!-- 用户信息展示区域 -->
+        <div class="user-info">
+            <!-- 用户登录信息显示 -->
+        </div>
+    </header>
+    
+    <!-- 主内容区域 -->
+    <main id="main-content">
+      <!-- 视频信息展示 -->
+      <div class="video-details">
+        <div class="video-content">
+          <!-- 视频播放区域 -->
+          <!-- 标题 -->
+          <h2 class="video-title">{{ video?.title }}</h2>
+          <video #videoElement class="video-js vjs-default-skin" width="640" height="360">
+            <!-- 设置视频源 -->
+            <source [src]="video?.videoFilePath" type="video/mp4">
+          </video>
+      
+          <!-- 视频信息 -->
+          <div class="video-info">
 
-    <!-- 视频播放区域 -->
-    <video #videoElement class="video-js vjs-default-skin" width="640" height="360">
-      <source [src]="video?.videoFilePath" type="video/mp4">
-    </video>
-
-    <p>{{ video?.description }}</p>
-  </div>
+            <!-- 描述 -->
+            <p class="video-description">{{ video?.description }}</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <!-- 侧边栏，可选 -->
+    <aside id="sidebar">
+        <!-- 侧边栏内容，比如广告或者链接列表 -->
+    </aside>
+    
+    <!-- 页面底部区域 -->
+    <footer id="footer">
+        <!-- 版权信息和联系方式 -->       
+        <p>到底啦！</p>
+    </footer>
+</body>
+</html>

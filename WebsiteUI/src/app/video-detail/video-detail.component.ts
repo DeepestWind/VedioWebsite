@@ -5,10 +5,11 @@ import Player from "video.js/dist/types/player";//这里不是很明白
 import { Video } from '../models/video.model';
 import { ActivatedRoute } from '@angular/router';
 import { VideoService } from '../services/video.service';
+import { HeaderModule } from '../header/header.module';
 @Component({
   selector: 'app-video-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HeaderModule],
   templateUrl: './video-detail.component.html',
   styleUrl: './video-detail.component.css'
 })
