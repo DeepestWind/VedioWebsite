@@ -1,12 +1,10 @@
-<p>video-detail works!</p>
 <!-- 视频信息展示 -->
 <div class="video-details">
     <h2>{{ video?.title }}</h2>
 
     <!-- 视频播放区域 -->
-    <video controls width="100%">
+    <video #videoElement class="video-js vjs-default-skin" width="640" height="360">
       <source [src]="video?.videoFilePath" type="video/mp4">
-      
     </video>
 
     <p>{{ video?.description }}</p>

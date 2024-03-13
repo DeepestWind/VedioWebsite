@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@types/video.js": "^7.3.57"
+  }
+}

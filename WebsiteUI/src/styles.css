@@ -1,3 +1,5 @@
+@import "../node_modules/video.js/dist/video-js.css";
+
 /* You can add global styles to this file, and also import other style files */
 :root {
     --background-light: #eebed2; /* 亮色模式下的背景色 */
