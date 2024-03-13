@@ -9,6 +9,9 @@ VideoWebsiteApi/VideoWebsiteApi.csproj.user
 # 屏蔽本地资源文件
 /resources/
 
+# 依赖
+WebsiteUI/node_modules/
+
 # Compiled output (from angular)
 /dist
 /tmp
