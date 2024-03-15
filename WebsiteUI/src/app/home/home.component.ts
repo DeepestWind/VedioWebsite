@@ -19,5 +19,7 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.videoService.getVideos().subscribe(videos => this.videos = videos);
+    let token = localStorage.getItem('token');
+    console.log(token)
   }
 }

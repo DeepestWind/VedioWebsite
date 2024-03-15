@@ -53,8 +53,10 @@ namespace VideoWebsiteApi.Controllers
         }
 
         // POST api/user/login
+        //使用单独用于输入输出的模型
+        //DTO模式（data transfer mode）
         [HttpPost("login")]
-        public async Task<ActionResult> Login([FromBody] User loginRequest)
+        public async Task<ActionResult> Login([FromBody] LoginRequest loginRequest)
         {
             // 在这里，我们验证用户名和校验密码
             var user = await _context.Users.SingleOrDefaultAsync(u => u.Username == loginRequest.Username);
