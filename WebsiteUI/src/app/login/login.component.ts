@@ -39,20 +39,19 @@ export class LoginComponent {
     const val = this.loginForm.value;
 
     this.userService.login(val.username, val.password)
-      .subscribe(
-        (data) => {
-          //console.log("User is logged in");
+      .subscribe({
+        next: (data) => {
           localStorage.setItem('token', data.token);
           this.router.navigateByUrl('/');
           this.snackBar.open('Log in successful!', 'Close', {
             duration: 3000
           });
         },
-        (error) => {
+        error: (error) => {
           this.snackBar.open('Invalid username or password!', 'Close', {
             duration: 2000,
           });
         }
-      );
+      });
   }
 }

@@ -24,6 +24,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IFileUrlService, FileUrlService>();
 builder.Services.AddScoped<IHashingService, HashingService>();
 builder.Services.AddScoped<IJWTService, JWTService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 //配置跨源资源访问
 builder.Services.AddCors(options =>

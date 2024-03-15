@@ -19,13 +19,13 @@ export class RegisterComponent {
 
   onRegister() {
     this.http.post('/api/user/register', this.user)
-    .subscribe(
-      response => {
-        console.log('注册成功', response);
+    .subscribe({
+      next: (response) => {
+        console.log('注册成功',response);
       },
-      error => {
+      error: (error) => {
         console.error('注册失败', error);
       }
-    );
+    });
   }
 }
