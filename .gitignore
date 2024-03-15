@@ -10,7 +10,7 @@ VideoWebsiteApi/VideoWebsiteApi.csproj.user
 /resources/
 
 # 依赖
-WebsiteUI/node_modules/
+WebsiteUI/node_modules/*
 
 # Compiled output (from angular)
 /dist
