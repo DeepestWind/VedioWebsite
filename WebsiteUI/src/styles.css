@@ -35,6 +35,10 @@ body {
     border-color: #bb86fc; /* 紫色边框 */
     box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2); /* 添加发光的阴影 */
   }
+
+button {
+  cursor: pointer;
+}
   
 /* 暗色模式的样式 */
 body.dark-mode {
@@ -53,3 +57,5 @@ body.dark-mode {
     border-radius: 4px; /* 轻微的圆角边框 */
     padding: 10px; /* 内部间距 */
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
