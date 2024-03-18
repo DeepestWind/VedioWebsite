@@ -1,47 +1,62 @@
 .container {
-    padding-top: 50px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: .5rem;
-  }
-  
-  .form-control {
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    padding: .375rem .75rem;
-    margin-bottom: 1rem; /* Add some space below each input */
-  }
-  
-  .btn {
-    padding: .375rem .75rem;
-  }
-  
-  .btn-success {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-  }
-  
-  .btn-success:hover {
-    color: #fff;
-    background-color: #218838;
-    border-color: #1e7e34;
-  }
-  
-  /* Add some padding around the form's container */
-  .container {
-    padding: 2rem;
-  }
-  
-  /* Center the form horizontally with Bootstrap */
-  .row {
-    justify-content: center;
-  }
-  
-  /* Add some space before the heading and between form items */
-  h2, .form-group {
-    margin-bottom: 1rem;
-  }
+  padding-top: 50px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: .2rem;
+}
+
+.form-control {
+  /* properties... */ 
+}
+
+.btn {
+  /* properties... */ 
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #4caf50;  /* Change the button color to green */
+  border-color: #4caf50; /* Change the button border color to green */
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: #388e3c;  /* Change the hover color to a deeper green */
+  border-color: #388e3c;  /* Change the hover border color to a deeper green */
+}
+
+.container {
+  padding: 1rem;
+}
+
+.row {
+  align-items: center;
+}
+
+h2, .form-group {
+  margin-bottom: 0.5rem;
+}
+
+/********************************
+New CSS
+********************************/
+
+/* Center the box */
+.centered-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Logo styles */
+.logo-container {
+  margin-bottom: 1rem;
+}
+
+.logo {
+  max-width: 120px;
+}

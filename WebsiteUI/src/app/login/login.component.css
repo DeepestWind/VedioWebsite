@@ -1,3 +1,62 @@
-.btn{
-    cursor: pointer;
-}
+.container {
+    padding-top: 50px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: .2rem;
+  }
+  
+  .form-control {
+    /* properties... */ 
+  }
+  
+  .btn {
+    /* properties... */ 
+  }
+  
+  .btn-success {
+    color: #fff;
+    background-color: #4caf50;  /* Change the button color to green */
+    border-color: #4caf50; /* Change the button border color to green */
+  }
+  
+  .btn-success:hover {
+    color: #fff;
+    background-color: #388e3c;  /* Change the hover color to a deeper green */
+    border-color: #388e3c;  /* Change the hover border color to a deeper green */
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .row {
+    align-items: center;
+  }
+  
+  h2, .form-group {
+    margin-bottom: 0.5rem;
+  }
+  
+  /********************************
+  New CSS
+  ********************************/
+  
+  /* Center the box */
+  .centered-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Logo styles */
+  .logo-container {
+    margin-bottom: 1rem;
+  }
+  
+  .logo {
+    max-width: 120px;
+  }
